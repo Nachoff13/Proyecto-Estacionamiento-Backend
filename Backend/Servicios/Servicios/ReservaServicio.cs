@@ -18,6 +18,8 @@ namespace Servicios.Servicios
         Task<bool> Modificar(ReservaConId reserva);
         Task<ReservaConId> ObtenerIndividual(int id);
         Task<List<ReservaConId>> Obtener();
+
+        Task<List<ReservaConId>> ObtenerPorGaraje(int id);
     }
 
     public class ReservaServicio : IReserva
@@ -146,6 +148,19 @@ namespace Servicios.Servicios
             catch (Exception ex)
             {
                 throw new Exception($"No se pudo recuperar el reserva con ID {id}. Detalles: {ex.Message}", ex);
+            }
+        }
+
+        public async Task<List<ReservaConId>> ObtenerPorGaraje(int id)
+        {
+            try
+            {
+                List<Data.Models.Reserva> modelos = _db.Reserva.Where(r => r.Idgaraje == id).ToList();
+                return modelos.Adapt<List<ReservaConId>>();
+            }
+            catch (Exception ex)
+            {
+                throw new Exception($"No se pudieron obtener los modelos. Detalles: {ex.Message}", ex);
             }
         }
     }
