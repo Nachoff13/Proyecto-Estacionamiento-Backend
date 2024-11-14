@@ -50,6 +50,13 @@ namespace WebAPI.Controllers
             return Ok(resultados);
         }
 
+        [HttpGet("ObtenerConductor")]
+        public async Task<ActionResult<List<UsuarioConId>>> ObtenerConductor()
+        {
+            var resultados = await _usuario.ObtenerConductor().ConfigureAwait(false);
+            return Ok(resultados);
+        }
+
         [HttpGet("ObtenerIndividual/{id}")]
         public async Task<ActionResult<UsuarioConId>> ObtenerIndividual(int id)
         {
@@ -61,6 +68,13 @@ namespace WebAPI.Controllers
         public async Task<ActionResult<UsuarioConId>> ObtenerPropietarioIndividual(int id)
         {
             var resultado = await _usuario.ObtenerPropietarioIndividual(id).ConfigureAwait(false);
+            return Ok(resultado);
+        }
+
+        [HttpGet("ObtenerConductorIndividual/{id}")]
+        public async Task<ActionResult<UsuarioConId>> ObtenerConductorIndividual(int id)
+        {
+            var resultado = await _usuario.ObtenerConductorIndividual(id).ConfigureAwait(false);
             return Ok(resultado);
         }
     }
