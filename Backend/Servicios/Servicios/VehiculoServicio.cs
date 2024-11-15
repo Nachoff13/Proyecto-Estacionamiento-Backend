@@ -18,6 +18,8 @@ namespace Servicios.Servicios
         Task<bool> Modificar(VehiculoConId vehiculo);
         Task<VehiculoConId> ObtenerIndividual(int id);
         Task<List<VehiculoConId>> Obtener();
+
+        Task<List<VehiculoConId>> ObtenerPorConductor(int idConductor);
     }
 
     public class VehiculoServicio : IVehiculo
@@ -144,6 +146,30 @@ namespace Servicios.Servicios
             catch (Exception ex)
             {
                 throw new Exception($"No se pudo recuperar el vehiculo con ID {id}. Detalles: {ex.Message}", ex);
+            }
+        }
+
+        public async Task<List<VehiculoConId>> ObtenerPorConductor(int idConductor)
+        {
+            try
+            {
+                // Filtrar los vehiculos con idConductor
+                List<Data.Models.Vehiculo> modeloVehiculos = _db.Vehiculo
+                    .Where(v => v.Idconductor == idConductor)
+                    .ToList();
+
+                if (modeloVehiculos != null)
+                {
+                    return modeloVehiculos.Adapt<List<VehiculoConId>>();
+                }
+                else
+                {
+                    throw new Exception("No es posible encontrar ese vehiculo");
+                }
+            }
+            catch (Exception ex)
+            {
+                throw new Exception($"No se pudo recuperar el vehiculo con ID {idConductor}. Detalles: {ex.Message}", ex);
             }
         }
     }
