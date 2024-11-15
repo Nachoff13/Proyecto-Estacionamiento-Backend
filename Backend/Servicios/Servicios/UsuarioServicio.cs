@@ -9,6 +9,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using Hashing;
+using Microsoft.EntityFrameworkCore;
 
 namespace Servicios.Servicios
 {
@@ -19,6 +20,8 @@ namespace Servicios.Servicios
         Task<bool> Modificar(UsuarioConId usuario);
         Task<UsuarioConIdSinContrasena> ObtenerIndividual(int id);
         Task<List<UsuarioConIdSinContrasena>> Obtener();
+        Task<UsuarioConIdSinContrasena> IniciarSesionPorEmail(string mail, string contrasena);
+
     }
 
     public class UsuarioServicio : IUsuario
@@ -157,6 +160,36 @@ namespace Servicios.Servicios
             {
                 throw new Exception($"No se pudo recuperar el usuario con ID {id}. Detalles: {ex.Message}", ex);
             }
+        }
+
+        public async Task<UsuarioConIdSinContrasena> IniciarSesionPorEmail(string mail, string contrasena)
+        {
+            var usuario = await _db.Usuario.FirstOrDefaultAsync(u => u.Mail == mail);
+
+            if (usuario != null)
+            {
+                var hasher = new Hashear();
+                var contrasenaHasheada = hasher.HashearConSHA256(contrasena);
+
+                if (usuario.Contrasena == contrasenaHasheada)
+                {
+                    return new UsuarioConIdSinContrasena
+                    {
+                        Id = usuario.Id,
+                        Nombre = usuario.Nombre,
+                        Apellido = usuario.Apellido,
+                        Mail = usuario.Mail,
+                        Username = usuario.Username,
+                        Esconductor = usuario.Esconductor,
+                        Espropietario = usuario.Espropietario
+                    };
+                }
+                else
+                {
+                    throw new Exception("La contraseña es incorrecta.");
+                }
+            }
+            throw new Exception("Usuario no encontrado.");
         }
     }
 }
