@@ -40,8 +40,23 @@ namespace Servicios.Servicios
 
                 if (validadorResultado.IsValid)
                 {
+                    // Adaptar el DTO a la entidad Reserva
                     var nuevoReserva = reserva.Adapt<Data.Models.Reserva>();
-                    //nuevoReserva.Baja = false;
+
+                    // Verificar si el garaje está disponible
+                    var garaje = await _db.Garaje.FindAsync(nuevoReserva.Idgaraje);
+                    if (garaje == null)
+                    {
+                        throw new Exception("El garaje no existe.");
+                    }
+
+                    // Si la reserva está en estado "Reservado", cambiar la disponibilidad del garaje
+                    if (nuevoReserva.Idreservaestado == 1)
+                    {
+                        garaje.Disponible = false;
+                        _db.Garaje.Update(garaje); 
+                    }
+
                     await _db.Reserva.AddAsync(nuevoReserva).ConfigureAwait(false);
                     await _db.SaveChangesAsync().ConfigureAwait(false);
                     return nuevoReserva.Id;
@@ -53,10 +68,9 @@ namespace Servicios.Servicios
             }
             catch (Exception ex)
             {
-                throw new Exception($"No se pudo crear el reserva. Detalles: {ex.Message}", ex);
+                throw new Exception($"No se pudo crear la reserva. Detalles: {ex.Message}", ex);
             }
         }
-
         public async Task<bool> Modificar(ReservaConId reserva)
         {
             try
