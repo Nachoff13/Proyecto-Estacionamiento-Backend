@@ -1,4 +1,5 @@
 using Core.DTO;
+using Data.Models;
 using Microsoft.AspNetCore.Mvc;
 using Servicios.Servicios;
 
@@ -48,6 +49,13 @@ namespace WebAPI.Controllers
         {
             var resultado = await _vehiculo.ObtenerIndividual(id).ConfigureAwait(false);
             return Ok(resultado);
+        }
+
+        [HttpGet("ObtenerPorConductor/{idConductor}")]
+        public async Task<ActionResult<List<VehiculoConId>>> ObtenerPorConductor(int idConductor)
+        {
+            var resultados = await _vehiculo.ObtenerPorConductor(idConductor).ConfigureAwait(false);
+            return Ok(resultados);
         }
     }
 }

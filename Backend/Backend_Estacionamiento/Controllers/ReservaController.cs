@@ -49,5 +49,12 @@ namespace WebAPI.Controllers
             var resultado = await _reserva.ObtenerIndividual(id).ConfigureAwait(false);
             return Ok(resultado);
         }
+
+        [HttpGet("ObtenerPorGaraje/{id}")]
+        public async Task<ActionResult<List<ReservaConId>>> ObtenerPorGaraje(int id)
+        {
+            var resultados = await _reserva.ObtenerPorGaraje(id).ConfigureAwait(false);
+            return Ok(resultados);
+        }
     }
 }

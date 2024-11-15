@@ -18,6 +18,8 @@ namespace Servicios.Servicios
         Task<bool> Modificar(ReservaConId reserva);
         Task<ReservaConId> ObtenerIndividual(int id);
         Task<List<ReservaConId>> Obtener();
+
+        Task<List<ReservaConId>> ObtenerPorGaraje(int id);
     }
 
     public class ReservaServicio : IReserva
@@ -38,8 +40,23 @@ namespace Servicios.Servicios
 
                 if (validadorResultado.IsValid)
                 {
+                    // Adaptar el DTO a la entidad Reserva
                     var nuevoReserva = reserva.Adapt<Data.Models.Reserva>();
-                    //nuevoReserva.Baja = false;
+
+                    // Verificar si el garaje está disponible
+                    var garaje = await _db.Garaje.FindAsync(nuevoReserva.Idgaraje);
+                    if (garaje == null)
+                    {
+                        throw new Exception("El garaje no existe.");
+                    }
+
+                    // Si la reserva está en estado "Reservado", cambiar la disponibilidad del garaje
+                    if (nuevoReserva.Idreservaestado == 1)
+                    {
+                        garaje.Disponible = false;
+                        _db.Garaje.Update(garaje); 
+                    }
+
                     await _db.Reserva.AddAsync(nuevoReserva).ConfigureAwait(false);
                     await _db.SaveChangesAsync().ConfigureAwait(false);
                     return nuevoReserva.Id;
@@ -51,10 +68,9 @@ namespace Servicios.Servicios
             }
             catch (Exception ex)
             {
-                throw new Exception($"No se pudo crear el reserva. Detalles: {ex.Message}", ex);
+                throw new Exception($"No se pudo crear la reserva. Detalles: {ex.Message}", ex);
             }
         }
-
         public async Task<bool> Modificar(ReservaConId reserva)
         {
             try
@@ -146,6 +162,19 @@ namespace Servicios.Servicios
             catch (Exception ex)
             {
                 throw new Exception($"No se pudo recuperar el reserva con ID {id}. Detalles: {ex.Message}", ex);
+            }
+        }
+
+        public async Task<List<ReservaConId>> ObtenerPorGaraje(int id)
+        {
+            try
+            {
+                List<Data.Models.Reserva> modelos = _db.Reserva.Where(r => r.Idgaraje == id).ToList();
+                return modelos.Adapt<List<ReservaConId>>();
+            }
+            catch (Exception ex)
+            {
+                throw new Exception($"No se pudieron obtener los modelos. Detalles: {ex.Message}", ex);
             }
         }
     }
