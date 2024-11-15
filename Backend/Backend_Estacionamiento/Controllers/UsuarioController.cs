@@ -49,5 +49,21 @@ namespace WebAPI.Controllers
             var resultado = await _usuario.ObtenerIndividual(id).ConfigureAwait(false);
             return Ok(resultado);
         }
+
+        [HttpPost("IniciarSesion")]
+        public async Task<ActionResult<UsuarioConIdSinContrasena>> IniciarSesion([FromBody] LoginDTO login)
+        {
+            try
+            {
+                var usuario = await _usuario.IniciarSesionPorEmail(login.Mail, login.Contrasena);
+                return Ok(usuario);
+            }
+            catch (Exception ex)
+            {
+                return Unauthorized(new { mensaje = ex.Message });
+            }
+        }
+
+
     }
 }
