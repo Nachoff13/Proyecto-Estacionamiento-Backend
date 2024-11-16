@@ -1,0 +1,12 @@
+C:\Users\milis\OneDrive\Escritorio\Agiles\Back\Backend\Core\bin\Debug\net7.0\Core.deps.json
+C:\Users\milis\OneDrive\Escritorio\Agiles\Back\Backend\Core\bin\Debug\net7.0\Core.dll
+C:\Users\milis\OneDrive\Escritorio\Agiles\Back\Backend\Core\bin\Debug\net7.0\Core.pdb
+C:\Users\milis\OneDrive\Escritorio\Agiles\Back\Backend\Core\obj\Debug\net7.0\Core.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\milis\OneDrive\Escritorio\Agiles\Back\Backend\Core\obj\Debug\net7.0\Core.AssemblyInfoInputs.cache
+C:\Users\milis\OneDrive\Escritorio\Agiles\Back\Backend\Core\obj\Debug\net7.0\Core.AssemblyInfo.cs
+C:\Users\milis\OneDrive\Escritorio\Agiles\Back\Backend\Core\obj\Debug\net7.0\Core.csproj.CoreCompileInputs.cache
+C:\Users\milis\OneDrive\Escritorio\Agiles\Back\Backend\Core\obj\Debug\net7.0\Core.sourcelink.json
+C:\Users\milis\OneDrive\Escritorio\Agiles\Back\Backend\Core\obj\Debug\net7.0\Core.dll
+C:\Users\milis\OneDrive\Escritorio\Agiles\Back\Backend\Core\obj\Debug\net7.0\refint\Core.dll
+C:\Users\milis\OneDrive\Escritorio\Agiles\Back\Backend\Core\obj\Debug\net7.0\Core.pdb
+C:\Users\milis\OneDrive\Escritorio\Agiles\Back\Backend\Core\obj\Debug\net7.0\ref\Core.dll

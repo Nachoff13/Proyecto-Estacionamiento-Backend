@@ -1,0 +1,85 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\milis\\OneDrive\\Escritorio\\Agiles\\Back\\Backend\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{9F4B1E4F-1B57-4C03-A5F4-8024085AC841}|Backend_Estacionamiento\\Backend_Estacionamiento.csproj|c:\\users\\milis\\onedrive\\escritorio\\agiles\\back\\backend\\backend_estacionamiento\\controllers\\reservacontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9F4B1E4F-1B57-4C03-A5F4-8024085AC841}|Backend_Estacionamiento\\Backend_Estacionamiento.csproj|solutionrelative:backend_estacionamiento\\controllers\\reservacontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{EE8D5F99-6704-4224-BEB0-240501433BE1}|Servicios\\Servicios.csproj|c:\\users\\milis\\onedrive\\escritorio\\agiles\\back\\backend\\servicios\\servicios\\reservaservicio.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{EE8D5F99-6704-4224-BEB0-240501433BE1}|Servicios\\Servicios.csproj|solutionrelative:servicios\\servicios\\reservaservicio.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{EE8D5F99-6704-4224-BEB0-240501433BE1}|Servicios\\Servicios.csproj|c:\\users\\milis\\onedrive\\escritorio\\agiles\\back\\backend\\servicios\\servicios\\usuarioservicio.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{EE8D5F99-6704-4224-BEB0-240501433BE1}|Servicios\\Servicios.csproj|solutionrelative:servicios\\servicios\\usuarioservicio.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9F4B1E4F-1B57-4C03-A5F4-8024085AC841}|Backend_Estacionamiento\\Backend_Estacionamiento.csproj|c:\\users\\milis\\onedrive\\escritorio\\agiles\\back\\backend\\backend_estacionamiento\\controllers\\usuariocontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9F4B1E4F-1B57-4C03-A5F4-8024085AC841}|Backend_Estacionamiento\\Backend_Estacionamiento.csproj|solutionrelative:backend_estacionamiento\\controllers\\usuariocontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 268,
+          "SelectedChildIndex": 0,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "ReservaController.cs",
+              "DocumentMoniker": "C:\\Users\\milis\\OneDrive\\Escritorio\\Agiles\\Back\\Backend\\Backend_Estacionamiento\\Controllers\\ReservaController.cs",
+              "RelativeDocumentMoniker": "Backend_Estacionamiento\\Controllers\\ReservaController.cs",
+              "ToolTip": "C:\\Users\\milis\\OneDrive\\Escritorio\\Agiles\\Back\\Backend\\Backend_Estacionamiento\\Controllers\\ReservaController.cs",
+              "RelativeToolTip": "Backend_Estacionamiento\\Controllers\\ReservaController.cs",
+              "ViewState": "AgIAAC8AAAAAAAAAAAAcwDUAAABTAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-14T23:51:37.791Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "ReservaServicio.cs",
+              "DocumentMoniker": "C:\\Users\\milis\\OneDrive\\Escritorio\\Agiles\\Back\\Backend\\Servicios\\Servicios\\ReservaServicio.cs",
+              "RelativeDocumentMoniker": "Servicios\\Servicios\\ReservaServicio.cs",
+              "ToolTip": "C:\\Users\\milis\\OneDrive\\Escritorio\\Agiles\\Back\\Backend\\Servicios\\Servicios\\ReservaServicio.cs",
+              "RelativeToolTip": "Servicios\\Servicios\\ReservaServicio.cs",
+              "ViewState": "AgIAAAYAAAAAAAAAAAAAABIAAAArAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-14T23:47:12.672Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "UsuarioController.cs",
+              "DocumentMoniker": "C:\\Users\\milis\\OneDrive\\Escritorio\\Agiles\\Back\\Backend\\Backend_Estacionamiento\\Controllers\\UsuarioController.cs",
+              "RelativeDocumentMoniker": "Backend_Estacionamiento\\Controllers\\UsuarioController.cs",
+              "ToolTip": "C:\\Users\\milis\\OneDrive\\Escritorio\\Agiles\\Back\\Backend\\Backend_Estacionamiento\\Controllers\\UsuarioController.cs",
+              "RelativeToolTip": "Backend_Estacionamiento\\Controllers\\UsuarioController.cs",
+              "ViewState": "AgIAAC0AAAAAAAAAAAAgwE8AAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-14T23:11:39.581Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "UsuarioServicio.cs",
+              "DocumentMoniker": "C:\\Users\\milis\\OneDrive\\Escritorio\\Agiles\\Back\\Backend\\Servicios\\Servicios\\UsuarioServicio.cs",
+              "RelativeDocumentMoniker": "Servicios\\Servicios\\UsuarioServicio.cs",
+              "ToolTip": "C:\\Users\\milis\\OneDrive\\Escritorio\\Agiles\\Back\\Backend\\Servicios\\Servicios\\UsuarioServicio.cs",
+              "RelativeToolTip": "Servicios\\Servicios\\UsuarioServicio.cs",
+              "ViewState": "AgIAAMEAAAAAAAAAAAAQwMYAAAAvAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-14T23:10:39.859Z"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

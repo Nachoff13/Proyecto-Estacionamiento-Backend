@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("Backend_Estacionamiento")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+cf0a6c009b93b8e50a6db8d9ff3f3491fefca9b1")]
 [assembly: System.Reflection.AssemblyProductAttribute("Backend_Estacionamiento")]
 [assembly: System.Reflection.AssemblyTitleAttribute("Backend_Estacionamiento")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
